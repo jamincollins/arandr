@@ -147,7 +147,7 @@ class XRandR(object):
                     o.rotations.add(r)
 
             for d in details:
-                o.modes.append(Size(int(a) for a in d.strip().split(" ")[0].split("x")))
+                o.modes.append(Size(a for a in d.strip().split(" ")[0].split("x")))
 
             self.state.outputs[o.name] = o
             self.configuration.outputs[o.name] = self.configuration.OutputConfiguration(active, geometry, rotation)
